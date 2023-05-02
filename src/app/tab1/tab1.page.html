@@ -1,17 +1,294 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col size="8">
+        <ion-searchbar class="custom" show-clear-button="focus"></ion-searchbar>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon class="cart" name="bag-outline">
+            
+          </ion-icon>
+          <ion-badge color="danger">1</ion-badge>
+        </div> 
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-icon class="cart" name="notifications-outline" mode="ios"></ion-icon>
+          <ion-badge color="danger">9+</ion-badge>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content no-scroll padding no-bounce has-bouncing="false" forceOverscroll="false" fullscreen="true">
+  <div class="promo-slide">
+    <swiper-container  pagination="true">
+      <swiper-slide  class="slider1" style="background-image: url(../../assets/icon/sales3.jpg)">
+        <ion-col size="4">
+          <p class="header">#FASHION DAY</p>
+          <p class="header-subtitle">80% OFF</p>
+          <p class="header-text">Discover fashion that suits to <br> your style</p>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button color="dark">Check this out</ion-button>
+        </ion-col>
+      </swiper-slide>
+      <swiper-slide class="slider1" style="background-image: url(../../assets/icon/cream2.jpg)">
+        <ion-col size="4">
+          <p class="header">#BEAUTYSALE</p>
+          <p class="header-subtitle">DISCOVER OUR<br>BEAUTY SELECTION</p>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button color="dark">Check this out</ion-button>
+        </ion-col>
+      </swiper-slide>
+      <swiper-slide class="slider1">
+        <ion-col size="4">
+          <p class="header">#FASHION DAY</p>
+          <p class="header-subtitle">80% OFF</p>
+          <p class="header-text">Discover fashion that suits to <br> your style</p>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button color="dark">Check this out</ion-button>
+        </ion-col>
+      </swiper-slide>
+    </swiper-container>
+  </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="category-slide">
+    <swiper-container pagination="true" #swiperRef [config]="config" (swiper)="setSwiperInstance($event)" [loop]="true">
+      <swiper-slide *ngFor="let card of [0,1,2]" class="slider2">
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <ion-card class="category-card">
+              <ion-card-content >
+                  <ion-icon class="ion-text-center" name="keypad-outline"></ion-icon>
+              </ion-card-content>   
+            </ion-card>
+            <ion-label class="ion-text-center">Category</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-card class="category-card">
+              <ion-card-content class="ion-text-center">
+                <ion-icon name="airplane-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+            <ion-label class="ion-text-center">Flight</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-card class="category-card">
+              <ion-card-content class="ion-text-center">
+                <ion-icon name="document-lock-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+            <ion-label class="ion-text-center">Bill</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-card class="category-card">
+              <ion-card-content class="ion-text-center">
+                <ion-icon name="globe-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+            <ion-label class="ion-text-center">Data plan</ion-label>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-card class="category-card">
+              <ion-card-content class="ion-text-center">
+                <ion-icon name="radio-outline"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+            <ion-label class="ion-text-center">Top Up</ion-label>
+          </ion-col>
+        </ion-row>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+  <div class="texts-divider2">
+    <p style="float: left;">Best Sale Product</p>
+    <p style="float: right; color: #309A81;" routerLink="/">See more</p>
+  </div>
+  <div class="card-div">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <div>
+            <ion-icon class="like-button" [color]="likedBy ? 'danger' : 'dark'" [name]="likedBy ? 'heart' : 'heart-outline'"
+              (click)="clickLike()"></ion-icon>
+            <img style="height: 100%; width: 100%; background-size: cover;" class="img-holder" alt="Silhouette of mountains" src="../assets/icon/shirto.jpg" />
+          </div>
+          
+          <ion-card-header>
+            <ion-card-title class="title">Shirt</ion-card-title>
+            <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+          </ion-card-header>
+        
+        <ion-row class="card-footer">
+          <ion-col size="6" class="ion-text-start">
+            
+            <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+            <ion-button class="amount"  fill="clear">$12.00</ion-button>
+          </ion-col>
+        </ion-row>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col>
+        <ion-card>
+          <ion-icon class="like-button" [color]="likedBy ? 'danger' : 'dark'"  [name]="likedBy ? 'heart' : 'heart-outline'" (click)="clickLike()"></ion-icon>
+          <img style="height: 100%; width: 100%;background-size: cover;" alt="Silhouette of mountains" src="../assets/icon/corduroy.jpg" />
+        <ion-card-header>
+          <ion-card-title class="title">Shirt</ion-card-title>
+          <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+        </ion-card-header>
+        
+        <ion-row class="card-footer">
+          <ion-col size="6" class="ion-text-start">
+        
+            <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+            <ion-button class="amount" fill="clear">$22.00</ion-button>
+          </ion-col>
+        </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-icon class="like-button" [color]="likedBy ? 'danger' : 'dark'"  [name]="likedBy ? 'heart' : 'heart-outline'" (click)="clickLike()"></ion-icon>
+          <img style="height: 100%; width: 100%;background-size: cover;" alt="Silhouette of mountains" src="../assets/icon/shirt4.jpg" />
+          <ion-card-header>
+            <ion-card-title class="title">Shirt</ion-card-title>
+            <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-row class="card-footer">
+            <ion-col size="6" class="ion-text-start">
+          
+              <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+              <ion-button class="amount" fill="clear">$32.00</ion-button>
+            </ion-col>
+          </ion-row>
+          </ion-card>
+      </ion-col>
+    
+      <ion-col>
+        <ion-card>
+          <ion-icon class="like-button" name="heart-outline"></ion-icon>
+          <img style="height: 100%; width: 100%; background-size: cover;" alt="Silhouette of mountains" src="../assets/icon/shirt5.jpg" />
+          <ion-card-header>
+            <ion-card-title class="title">Shirt</ion-card-title>
+            <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-row class="card-footer">
+            <ion-col size="6" class="ion-text-start">
+          
+              <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+              <ion-button class="amount" fill="clear">$42.00</ion-button>
+            </ion-col>
+          </ion-row>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-icon class="like-button" name="heart-outline"></ion-icon>
+          <img style="height: 100%; width: 100%; background-size: cover;" alt="Silhouette of mountains" src="../assets/icon/hoodie23.jpg" />
+          <ion-card-header>
+            <ion-card-title class="title">Shirt</ion-card-title>
+            <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-row class="card-footer">
+            <ion-col size="6" class="ion-text-start">
+          
+              <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+              <ion-button class="amount" fill="clear">$25.00</ion-button>
+            </ion-col>
+          </ion-row>
+          </ion-card>
+      </ion-col>
+    
+      <ion-col>
+        <ion-card>
+          <ion-icon class="like-button" name="heart-outline"></ion-icon>
+          <img style="height: 100%; width: 100%; background-size: cover;" alt="Silhouette of mountains" src="../assets/icon/hoodie24.jpg" />
+          <ion-card-header>
+            <ion-card-title class="title">Shirt</ion-card-title>
+            <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-row class="card-footer">
+            <ion-col size="6" class="ion-text-start">
+          
+              <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+              <ion-button class="amount" fill="clear">$50.00</ion-button>
+            </ion-col>
+          </ion-row>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-icon class="like-button" name="heart-outline"></ion-icon>
+          <img style="height: 100%; width: 100%; background-size: cover;" alt="Silhouette of mountains" src="../assets/icon/hoodie24.jpg" />
+          <ion-card-header>
+            <ion-card-title class="title">Shirt</ion-card-title>
+            <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-row class="card-footer">
+            <ion-col size="6" class="ion-text-start">
+          
+              <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+              <ion-button class="amount" fill="clear">$50.00</ion-button>
+            </ion-col>
+          </ion-row>
+          </ion-card>
+      </ion-col>
+    
+      <ion-col>
+        <ion-card>
+          <ion-icon class="like-button" name="heart-outline"></ion-icon>
+          <img style="height: 100%; width: 100%; background-size: cover;" alt="Silhouette of mountains" src="../assets/icon/hoodie23.jpg" />
+          <ion-card-header>
+            <ion-card-title class="title">Shirt</ion-card-title>
+            <ion-card-subtitle class="subtitle" (click)="openDetails()">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</ion-card-subtitle>
+          </ion-card-header>
+          
+          <ion-row class="card-footer">
+            <ion-col size="6" class="ion-text-start">
+          
+              <ion-button class="rating" fill="clear"><ion-icon name="star"></ion-icon>4.9 | 2356</ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+              <ion-button class="amount" fill="clear">$45.00</ion-button>
+            </ion-col>
+          </ion-row>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+    </div>
 </ion-content>

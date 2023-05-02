@@ -1,0 +1,155 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon class="back-icon" (click)="goBack()" name="chevron-back-outline"></ion-icon>
+    </ion-buttons>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6"></ion-col>
+          <ion-col>
+            <ion-icon class="cart" name="heart-outline"></ion-icon>
+          </ion-col>
+          <ion-col>
+              <ion-icon class="cart" name="share-social-outline"></ion-icon>
+          </ion-col>
+          
+          <ion-col>
+            <div>
+              <ion-icon class="cart" name="bag-outline" mode="ios"></ion-icon>
+              <ion-badge color="danger">1</ion-badge>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  no-scroll padding no-bounce has-bouncing="false" forceOverscroll="false" [fullscreen]="true">
+    <ion-item text-wrap>
+      <div class="container pb-5 mb-sm-1">
+        <!-- Categories grid-->
+        <div class="row bg">
+          <!-- Category-->
+          <div class="col-md-4 col-sm-6">
+            <div class="card border-0 mb-grid-gutter">
+              <div class="card-img-tiles" href="shop-style1-ls.html">
+                <div class="thumblist">
+                  <img style="background-color: inherit;" src="../assets/icon/corduroy.jpg" alt="Clothing">
+                  <img src="../assets/icon/corduroy.jpg" alt="Clothing">
+                  <img src="../assets/icon/corduroy.jpg" alt="Clothing">
+                  <img src="../assets/icon/corduroy.jpg" alt="Clothing">
+                </div>
+                <div class="main-img">
+                  <img src="../assets/icon/corduroy.jpg" alt="Clothing">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+
+    <div class="content-container">
+      <ion-label style="color: #A9AAAF;">
+        <ion-icon style="color: #A9AAAF;" name="storefront-outline"></ion-icon>
+        tokobaju.id
+      </ion-label>
+      <h5 class="bold">Essentials Men's Short-<br>Sleeve Crewneck T-Shirt</h5>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-text-start">
+            <ion-label class="font-14" style="color: #A9AAAF;">
+              <ion-icon class="gold-color" name="star"></ion-icon>
+              4.9 Ratings
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-label class=" font-14" style="color: #A9AAAF;">
+              2.3k+ Reviews
+            </ion-label>
+          </ion-col>
+          <ion-col class="ion-text-end">
+            <ion-label class="font-14" style="color: #A9AAAF;">
+              2.9k + sold
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-segment class="green" [(ngModel)]="segment" (ionChange)="segmentChanged($event)" mode="md">
+        <ion-segment-button class="segment-button" value="about">
+          <ion-label>About Item</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="segment-button" value="reviews">
+          <ion-label>Reviews</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+      <div [ngSwitch]="segment">
+        <div class="container" *ngSwitchCase="'about'">
+            <ion-row>
+              <ion-col class="ion-text-start">
+                <ion-item>
+                  <ion-label class="ion-text-start" style="color: #A9AAAF; font-size: 14px;">Brand :</ion-label>
+                  
+                  <p class="ion-text-end bold-text">ChArmkpR</p>
+                </ion-item>
+              </ion-col>
+              <ion-col class="ion-text-end">
+                <ion-item>
+                  <ion-label class="ion-text-start" style="color: #A9AAAF; font-size: 14px;">Color :</ion-label>
+                  
+                  <p class="ion-text-end bold-text ">Aprikot</p>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          
+        </div>
+      
+        <div *ngSwitchCase="'reviews'">
+          <ion-card>
+            <ion-card-content class="history-content">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="2" class="ion-text-start">
+                    <ion-icon name="stats-chart-outline"></ion-icon>
+                  </ion-col>
+                  <ion-col size="8" class="ion-text-center">
+                    <p>Total No Of Accounts Opened</p>
+                  </ion-col>
+                  <ion-col size="2" class="ion-text-end">
+                    <p></p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+      
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+    </div>
+ 
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-start">
+          <ion-label class="font-14" style="color: #A9AAAF;"> Total Price</ion-label><br>
+          <ion-label class="font-24 amount">$18.00</ion-label>
+        </ion-col>
+        <ion-col>
+        <ion-button class="footer-button">
+          <ion-icon slot="start"  name="bag-outline" mode="ios"></ion-icon>
+          1
+        </ion-button>
+        <ion-button class="buy-button" color="dark">
+          Buy Now
+        </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

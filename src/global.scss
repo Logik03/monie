@@ -24,3 +24,253 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+@import 'swiper/scss';
+
+
+.searchbar-md .searchbar-input {
+  padding: 6px 9px !important; // Adjust as your need 
+}
+
+.font-14 {
+  font-size: 14px;
+}
+.font-24 {
+  font-size: 24px;
+}
+
+ion-searchbar {
+  border: 2px solid #0000 !important;
+  /* overall styles here */
+  .searchbar-input-container {
+
+    /* inner input styles here */
+    input {
+      /* input element styles here */
+      
+    }
+  }
+}
+
+ion-content {
+  --offset-bottom: auto !important;
+  --overflow: hidden;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+  width: 18px;
+}
+.cart {
+  font-size: 35px;
+  padding-top: 5px;
+}
+
+ion-header ion-toolbar,
+ion-footer ion-toolbar {
+  --background: inherit;
+}
+
+ion-searchbar.custom {
+  //--background: #19422d;
+  --color: #454545;
+  --placeholder-color: #454545;
+  --icon-color: #454545;
+  --clear-button-color: #000;
+  border: 1px #454545 solid !important;
+  border-radius: 8px !important;
+  --border-radius: 10px;
+  --box-shadow: none;
+}
+
+ion-searchbar.ios.custom {
+  --cancel-button-color: #19422d;
+}
+
+ion-searchbar.md.custom {
+  --cancel-button-color: #fff;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-badge {
+  position: absolute;
+  //top: 20px;
+  right: 20px;
+}
+
+.like-button {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  font-size: 20px;
+  border: 1px solid #0000;
+}
+
+.title {
+  font-size: 10px;
+}
+
+.subtitle {
+  font-size: 10px;
+  font-weight: bolder;
+  color: #000;
+}
+
+.rating {
+  font-size: 10px;
+
+  ion-icon {
+    font-size: 10px;
+    margin-right: 5px;
+    color: goldenrod;
+  }
+}
+
+.amount {
+  color: #309A81;
+  font-weight: bolder;
+}
+
+.rating {
+  color: #454545;
+}
+
+.img-holder {
+  background-color: gray;
+  height: 100px;
+  width: 100%;
+}
+
+.texts-divider2 {
+  overflow: hidden;
+  color: #000;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bolder;
+  background-color: #FAFAFA;
+}
+
+.card-div {
+  background-color: #FAFAFA;
+}
+
+.slider1 {
+  width: 100%;
+  height: 160px;
+  border: 1px;
+  color: #A0A4A8;
+  background-color: #E9EBEA;
+  //background-image: url("../../assets/icon/sales3.jpg");
+  background-size: cover;
+
+  ion-col {
+    p {
+      margin-left: 10px;
+    }
+
+    .header {
+      color: #000;
+      font-size: 10px;
+      font-weight: bolder;
+
+    }
+
+    .header-subtitle {
+      color: #000;
+      font-weight: bolder;
+      font-size: 25px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .header-text {
+      color: #A6A8AC;
+      font-size: 10px;
+      margin-top: 0;
+      //margin-bottom: 0;
+    }
+
+    ion-button {
+      font-size: 10px;
+      text-transform: none;
+    }
+  }
+}
+
+.slider2 {
+  width: 100%;
+  height: 100px;
+  border: 1px;
+  color: #fff;
+}
+
+.promo-slide {
+  background-image: url("/assets/icon/sales3.jpg");
+
+  swiper-container {
+    --swiper-pagination-bullet-inactive-color: #CDD1CF;
+    --swiper-pagination-color: #2D2F3D;
+    --swiper-pagination-bullet-width: 18px;
+    --swiper-pagination-bullet-height: 4px;
+    --swiper-pagination-bullet-border-radius: 13px;
+    --swiper-pagination-top: 0px;
+    --swiper-pagination-left: 50px !important;
+  }
+}
+
+.category-slide {
+  background-color: #fff;
+
+  ion-label {
+    font-size: 10px;
+    color: #AFAFAF;
+    //margin-left: 1rem;
+  }
+
+  swiper-container {
+    --swiper-pagination-bullet-inactive-color: #CDD1CF;
+    --swiper-pagination-bullet-inactive-width: 8px;
+    --swiper-pagination-color: #2D2F3D;
+    --swiper-pagination-bullet-width: 18px;
+    --swiper-pagination-bullet-height: 4px;
+    --swiper-pagination-bullet-border-radius: 13px;
+
+  }
+
+  .swiper-pagination-horizontal {
+    float: right;
+    margin-left: 10px;
+    /* Optional: add some spacing between bullets */
+  }
+}
+
+.category-card {
+  width: 45px;
+  height: 45px;
+  background-color: #F6F6F6;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 0;
+
+  ion-icon {
+    font-size: 20px;
+    color: #000;
+  }
+
+}
+
+.back-icon {
+  font-size: 30px;
+}
+.gold-color {
+  color: goldenrod;
+}

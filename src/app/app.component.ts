@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { register } from 'swiper/element/bundle';
+import { SwiperOptions } from 'swiper';
+//import 'swiper/css/bundle';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,22 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+
+  config: SwiperOptions = {
+    pagination: { 
+      el: '.swiper-pagination', 
+      clickable: true 
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    spaceBetween: 30,
+    autoplay: {
+      delay: 1000
+    }
+  };  
+  constructor() {
+    register();
+  }
 }
