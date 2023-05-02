@@ -48,14 +48,6 @@ export class Tab1Page implements AfterViewInit {
       spaceBetween: 100
     });
    this.swiper = this.swiperRef?.nativeElement.swiper;
-   console.log(this.swiper, 'i am swiper')
-   
-   //this.swiperRef.autoplay.start()
 }
 
-setSwiperInstance(swiper : any) {
-  setInterval(() => {
-    swiper.slideNext();
-  }, 3000);
-}
 }
