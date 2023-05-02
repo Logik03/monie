@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { register } from 'swiper/element/bundle';
 import { SwiperOptions } from 'swiper';
 import { Router } from '@angular/router';
@@ -15,23 +15,15 @@ register();
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
-  @ViewChild('swiperRef')
-  swiperRef: ElementRef | undefined;
+export class Tab1Page implements AfterViewInit {
+  @ViewChild('swiperRef') swiperRef: ElementRef | undefined;
   swiper?: Swiper;
 
+  
+
   config: SwiperOptions = {
-    pagination: { 
-      el: '.swiper-pagination', 
-      clickable: true 
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    spaceBetween: 30,
     autoplay: {
-      delay: 3000
+      delay: 5000
     }
   }; 
   
@@ -51,7 +43,13 @@ export class Tab1Page {
   }
 
   ngAfterViewInit() {
+    var mySwiper = new Swiper('.swiper-container', {
+      speed: 400,
+      spaceBetween: 100
+    });
    this.swiper = this.swiperRef?.nativeElement.swiper;
+   console.log(this.swiper, 'i am swiper')
+   
    //this.swiperRef.autoplay.start()
 }
 

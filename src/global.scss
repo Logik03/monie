@@ -216,13 +216,16 @@ ion-badge {
   background-image: url("/assets/icon/sales3.jpg");
 
   swiper-container {
-    --swiper-pagination-bullet-inactive-color: #CDD1CF;
+   // --swiper-pagination-bullet-inactive-color: #CDD1CF;
     --swiper-pagination-color: #2D2F3D;
     --swiper-pagination-bullet-width: 18px;
     --swiper-pagination-bullet-height: 4px;
     --swiper-pagination-bullet-border-radius: 13px;
     --swiper-pagination-top: 0px;
     --swiper-pagination-left: 50px !important;
+    .swiper-pagination >.swiper-pagination-bullets >.swiper-pagination-horizontal {
+      left: 109px !important;
+    }
   }
 }
 
@@ -235,8 +238,10 @@ ion-badge {
     //margin-left: 1rem;
   }
 
+
+    
   swiper-container {
-    --swiper-pagination-bullet-inactive-color: #CDD1CF;
+    //--swiper-pagination-bullet-inactive-color: #CDD1CF;
     --swiper-pagination-bullet-inactive-width: 8px;
     --swiper-pagination-color: #2D2F3D;
     --swiper-pagination-bullet-width: 18px;

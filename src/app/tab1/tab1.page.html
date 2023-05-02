@@ -26,8 +26,8 @@
 
 <ion-content no-scroll padding no-bounce has-bouncing="false" forceOverscroll="false" fullscreen="true">
   <div class="promo-slide">
-    <swiper-container  pagination="true">
-      <swiper-slide  class="slider1" style="background-image: url(../../assets/icon/sales3.jpg)">
+    <swiper-container  pagination="true" #swiperRef [config]="config" [autoplay]= "{delay: 3000}" >
+      <swiper-slide  class="slider1" style="background-image: url(../../assets/icon/sales3.jpg)" data-swiper-autoplay="3000">
         <ion-col size="4">
           <p class="header">#FASHION DAY</p>
           <p class="header-subtitle">80% OFF</p>
@@ -37,7 +37,7 @@
           <ion-button color="dark">Check this out</ion-button>
         </ion-col>
       </swiper-slide>
-      <swiper-slide class="slider1" style="background-image: url(../../assets/icon/cream2.jpg)">
+      <swiper-slide class="slider1" style="background-image: url(../../assets/icon/cream2.jpg)"  data-swiper-autoplay="3000">
         <ion-col size="4">
           <p class="header">#BEAUTYSALE</p>
           <p class="header-subtitle">DISCOVER OUR<br>BEAUTY SELECTION</p>
@@ -46,7 +46,7 @@
           <ion-button color="dark">Check this out</ion-button>
         </ion-col>
       </swiper-slide>
-      <swiper-slide class="slider1">
+      <swiper-slide class="slider1"  data-swiper-autoplay="5000">
         <ion-col size="4">
           <p class="header">#FASHION DAY</p>
           <p class="header-subtitle">80% OFF</p>
@@ -60,7 +60,7 @@
   </div>
 
   <div class="category-slide">
-    <swiper-container pagination="true" #swiperRef [config]="config" (swiper)="setSwiperInstance($event)" [loop]="true">
+    <swiper-container pagination="true" >
       <swiper-slide *ngFor="let card of [0,1,2]" class="slider2">
         <ion-row>
           <ion-col class="ion-text-center">
